@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AddContact from "./AddContact";
-import { backendUrl } from "../config";  // Import backend URL
+import backendUrl from "../config";  // Import backend URL
 import "./ContactList.css";
 
 // Use backendUrl + /api as base URL
