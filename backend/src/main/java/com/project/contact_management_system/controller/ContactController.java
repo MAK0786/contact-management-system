@@ -28,7 +28,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://contact-management-system-git-main-mak0786s-projects.vercel.app/") 
+@CrossOrigin(origins = "https://contact-management-system-rho.vercel.app") 
 
 @Tag(name = "Contact API", description = "Manage contact information")
 public class ContactController {
