@@ -1,7 +1,7 @@
 // src/components/AddContact.jsx
 import React, { useState } from "react";
 import axios from "axios";
-import { backendUrl } from "../config";  // import backendUrl
+import backendUrl from "../config";  // import backendUrl
 
 const AddContact = ({ onContactAdded }) => {
   const [contact, setContact] = useState({
