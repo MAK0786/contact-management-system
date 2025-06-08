@@ -1,5 +1,5 @@
 # Stage 1: Build the Spring Boot app
-FROM maven:3.9.0-eclipse-temurin-17 AS builder
+FROM maven:3.9.0-eclipse-temurin-21 AS builder
 WORKDIR /app
 
 # Copy pom.xml and source code
@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run the app
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
 
 # Copy the built jar from the builder stage
