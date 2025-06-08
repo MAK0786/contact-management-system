@@ -1,0 +1,198 @@
+/* ContactList.css */
+
+/* Container holding form and table side-by-side */
+.container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  align-items: flex-start;
+  background-color: #f7f9fc;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Left panel - the AddContact form */
+.left-panel {
+  flex: 0 0 400px;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.left-panel form {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-panel input {
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.left-panel input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.left-panel button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.left-panel button:hover {
+  background-color: #0056b3;
+}
+
+/* Right panel - the contact list and edit form */
+.right-panel {
+  flex: 1;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.right-panel table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  color: #333;
+}
+
+.right-panel th, .right-panel td {
+  padding: 14px 18px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.right-panel th {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  user-select: none;
+}
+
+.right-panel tr:hover {
+  background-color: #f1f7ff;
+}
+
+/* Table buttons */
+.right-panel button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  margin-right: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.right-panel button:first-of-type {
+  background-color: #ffc107; /* Edit - amber */
+  color: #333;
+}
+
+.right-panel button:first-of-type:hover {
+  background-color: #e0a800;
+}
+
+.right-panel button:last-of-type {
+  background-color: #dc3545; /* Delete - red */
+  color: white;
+}
+
+.right-panel button:last-of-type:hover {
+  background-color: #bd2130;
+}
+
+/* Edit form section */
+.edit-form {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff4e6;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+}
+
+.edit-form h4 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Inputs inside edit form */
+.edit-form input {
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.edit-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.edit-form button {
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit-form button:first-of-type {
+  background-color: #28a745;
+  color: white;
+}
+
+.edit-form button:first-of-type:hover {
+  background-color: #218838;
+}
+
+.edit-form button:last-of-type {
+  background-color: #6c757d;
+  color: white;
+}
+
+.edit-form button:last-of-type:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-panel, .right-panel {
+    flex: none;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .right-panel {
+    overflow-x: auto;
+  }
+}
