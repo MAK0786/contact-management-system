@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AddContact from "./AddContact";
+import { backendUrl } from "../config";  // Import backend URL
 import "./ContactList.css";
 
-const axiosInstance = axios.create({ baseURL: "http://localhost:8080/api" });
+// Use backendUrl + /api as base URL
+const axiosInstance = axios.create({ baseURL: `${backendUrl}/api` });
 
 const ContactList = () => {
   const [contacts, setContacts] = useState([]);

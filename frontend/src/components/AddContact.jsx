@@ -1,6 +1,7 @@
 // src/components/AddContact.jsx
 import React, { useState } from "react";
 import axios from "axios";
+import { backendUrl } from "../config";  // import backendUrl
 
 const AddContact = ({ onContactAdded }) => {
   const [contact, setContact] = useState({
@@ -17,7 +18,7 @@ const AddContact = ({ onContactAdded }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/api/add", contact)
+      .post(`${backendUrl}/api/add`, contact)  // use backendUrl here
       .then(() => {
         alert("Contact added!");
         setContact({ name: "", email: "", phone: "", address: "" });
@@ -35,7 +36,16 @@ const AddContact = ({ onContactAdded }) => {
         <h3>Add New Contact</h3>
         <input type="text" name="name" placeholder="Name" value={contact.name} onChange={handleChange} required />
         <input type="email" name="email" placeholder="Email" value={contact.email} onChange={handleChange} required />
-        <input type="text" name="phone" placeholder="Phone" value={contact.phone} onChange={handleChange} pattern="\d{10}" title="Phone must be 10 digits" required />
+        <input
+          type="text"
+          name="phone"
+          placeholder="Phone"
+          value={contact.phone}
+          onChange={handleChange}
+          pattern="\d{10}"
+          title="Phone must be 10 digits"
+          required
+        />
         <input type="text" name="address" placeholder="Address" value={contact.address} onChange={handleChange} />
         <button type="submit">Add Contact</button>
       </form>
